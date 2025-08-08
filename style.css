@@ -10,7 +10,7 @@ body {
   left: 5%;
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  /* gap removido para colar o quadrado nas linhas */
 }
 
 .gc-box {
@@ -29,12 +29,12 @@ body {
   padding: 10px 20px;
   font-size: 36px;
   font-weight: 600;
-  display: inline-block;
+  text-transform: uppercase; /* 🔹 Sempre maiúsculas */
 }
 
 .connector {
-  height: 2px;
-  background-color: #e67e22;
+  height: 5px;
+  background-color: #e74c3c;
   margin: 0;
 }
 
@@ -44,7 +44,8 @@ body {
   padding: 6px 18px;
   font-size: 24px;
   font-weight: 400;
-  margin-left: 12px;
+  /* remove margem lateral que estava afastando */
+  margin-left: 0;
   display: inline-block;
 }
 
