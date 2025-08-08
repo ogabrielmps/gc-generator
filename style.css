@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  background-color: #00ff00; /* fundo verde para chroma */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.gc-container {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  animation: slideIn 1s ease-out;
+}
+
+.line1 {
+  background-color: #d3d3d3;
+  color: #1e1e1e;
+  padding: 10px 20px;
+  font-size: 36px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.line2 {
+  background-color: #e74c3c;
+  color: #ffffff;
+  padding: 5px 15px;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: -5px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}

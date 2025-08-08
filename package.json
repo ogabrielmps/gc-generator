@@ -1,0 +1,12 @@
+{
+  "name": "gc-generator",
+  "version": "1.0.0",
+  "description": "Gerador de GC animado com fundo verde",
+  "main": "generate.js",
+  "scripts": {
+    "start": "node generate.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.3.8"
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GC Animado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .form-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .form-container input {
+      display: block;
+      margin-bottom: 8px;
+      padding: 6px;
+      width: 250px;
+      font-size: 16px;
+    }
+
+    .form-container button {
+      padding: 6px 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <label>Nome:</label>
+    <input type="text" id="nomeInput" value="TEXTO DA LINHA 1" />
+    <label>Profissão:</label>
+    <input type="text" id="profissaoInput" value="texto da linha 2" />
+    <button onclick="atualizarGC()">Atualizar</button>
+  </div>
+
+  <div class="gc-container">
+    <div class="line1" id="line1">TEXTO DA LINHA 1</div>
+    <div class="line2" id="line2">texto da linha 2</div>
+  </div>
+
+  <script>
+    function atualizarGC() {
+      const nome = document.getElementById('nomeInput').value;
+      const profissao = document.getElementById('profissaoInput').value;
+      document.getElementById('line1').innerText = nome;
+      document.getElementById('line2').innerText = profissao;
+    }
+  </script>
+</body>
+</html>
