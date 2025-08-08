@@ -9,6 +9,10 @@ body {
   bottom: 10%;
   left: 5%;
   animation: slideIn 1s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .line1 {
@@ -17,7 +21,6 @@ body {
   padding: 10px 20px;
   font-size: 36px;
   font-weight: 600;
-  display: inline-block;
 }
 
 .line2 {
@@ -26,9 +29,7 @@ body {
   padding: 5px 15px;
   font-size: 24px;
   font-weight: 400;
-  margin-top: -5px;
   margin-left: 10px;
-  display: inline-block;
 }
 
 @keyframes slideIn {
