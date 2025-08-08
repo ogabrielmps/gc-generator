@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GC Animado</title>
+  <title>GC Animado - IN</title>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -32,24 +32,23 @@
   </style>
 </head>
 <body>
-<div class="form-container">
-  <label>Nome:</label>
-  <input type="text" id="nomeInput" value="TEXTO DA LINHA 1" />
-  <label>Profissão:</label>
-  <input type="text" id="profissaoInput" value="texto da linha 2" />
-  <button onclick="atualizarGC()">Atualizar</button>
-  <button onclick="rodarAnimacao()">Rodar animação</button>
-</div>
-
-<div class="gc-container">
-  <div class="head"></div>
-  <div class="gc-box" id="gcBox">
-    <div class="linha linha1" id="line1">TEXTO DA LINHA 1</div>
-    <div class="connector"></div>
-    <div class="linha linha2" id="line2">texto da linha 2</div>
+  <div class="form-container">
+    <label>Nome:</label>
+    <input type="text" id="nomeInput" value="TEXTO DA LINHA 1" />
+    <label>Profissão:</label>
+    <input type="text" id="profissaoInput" value="texto da linha 2" />
+    <button onclick="atualizarGC()">Atualizar</button>
+    <button onclick="rodarAnimacao()">Rodar animação</button>
   </div>
-</div>
 
+  <div class="gc-container">
+    <div class="head" id="head"></div>
+    <div class="gc-box" id="gcBox">
+      <div class="linha linha1" id="line1">TEXTO DA LINHA 1</div>
+      <div class="connector" id="connector"></div>
+      <div class="linha linha2" id="line2">texto da linha 2</div>
+    </div>
+  </div>
 
   <script>
     function atualizarGC() {
@@ -57,25 +56,37 @@
       const profissao = document.getElementById('profissaoInput').value;
       document.getElementById('line1').innerText = nome;
       document.getElementById('line2').innerText = profissao;
+      ajustarLargura();
     }
 
-  function atualizarGC() {
-  const nome = document.getElementById('nomeInput').value;
-  const profissao = document.getElementById('profissaoInput').value;
-  document.getElementById('line1').innerText = nome;
-  document.getElementById('line2').innerText = profissao;
-}
+    function ajustarLargura() {
+      const linha1 = document.getElementById("line1");
+      const connector = document.getElementById("connector");
+      const head = document.getElementById("head");
 
-function rodarAnimacao() {
-  const box = document.getElementById('gcBox');
-  box.classList.remove('slideIn');
-  
-  // Força reflow para reiniciar animação
-  void box.offsetWidth;
-  
-  box.classList.add('slideIn');
-}
+      const largura = linha1.offsetWidth;
 
+      connector.style.width = largura + "px";
+      head.style.height = (document.getElementById("gcBox").offsetHeight) + "px";
+    }
+
+    function rodarAnimacao() {
+      const box = document.getElementById("gcBox");
+      const head = document.getElementById("head");
+
+      box.classList.remove("animar");
+      head.classList.remove("animar");
+
+      // Reflow
+      void box.offsetWidth;
+
+      box.classList.add("animar");
+      head.classList.add("animar");
+    }
+
+    window.onload = () => {
+      ajustarLargura();
+    };
   </script>
 </body>
 </html>
