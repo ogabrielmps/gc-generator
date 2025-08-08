@@ -32,26 +32,23 @@
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <label>Nome:</label>
-    <input type="text" id="nomeInput" value="TEXTO DA LINHA 1" />
-    <label>Profissão:</label>
-    <input type="text" id="profissaoInput" value="texto da linha 2" />
-    <button onclick="atualizarGC()">Atualizar</button>
-  </div>
+<div class="form-container">
+  <label>Nome:</label>
+  <input type="text" id="nomeInput" value="TEXTO DA LINHA 1" />
+  <label>Profissão:</label>
+  <input type="text" id="profissaoInput" value="texto da linha 2" />
+  <button onclick="atualizarGC()">Atualizar</button>
+  <button onclick="rodarAnimacao()">Rodar animação</button>
+</div>
 
-  <div class="gc-container">
+<div class="gc-container">
+  <div class="head"></div>
+  <div class="gc-box" id="gcBox">
     <div class="linha linha1" id="line1">TEXTO DA LINHA 1</div>
+    <div class="connector"></div>
     <div class="linha linha2" id="line2">texto da linha 2</div>
   </div>
-
-  <script>
-    function atualizarGC() {
-      const nome = document.getElementById('nomeInput').value;
-      const profissao = document.getElementById('profissaoInput').value;
-      document.getElementById('line1').innerText = nome;
-      document.getElementById('line2').innerText = profissao;
-    }
-  </script>
+</div>
+  
 </body>
 </html>
