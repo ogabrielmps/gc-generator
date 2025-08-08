@@ -49,6 +49,33 @@
     <div class="linha linha2" id="line2">texto da linha 2</div>
   </div>
 </div>
+
+
+  <script>
+    function atualizarGC() {
+      const nome = document.getElementById('nomeInput').value;
+      const profissao = document.getElementById('profissaoInput').value;
+      document.getElementById('line1').innerText = nome;
+      document.getElementById('line2').innerText = profissao;
+    }
+
+  function atualizarGC() {
+  const nome = document.getElementById('nomeInput').value;
+  const profissao = document.getElementById('profissaoInput').value;
+  document.getElementById('line1').innerText = nome;
+  document.getElementById('line2').innerText = profissao;
+}
+
+function rodarAnimacao() {
+  const box = document.getElementById('gcBox');
+  box.classList.remove('slideIn');
   
+  // Força reflow para reiniciar animação
+  void box.offsetWidth;
+  
+  box.classList.add('slideIn');
+}
+
+  </script>
 </body>
 </html>
